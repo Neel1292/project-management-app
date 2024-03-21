@@ -2,7 +2,7 @@ import { useRef, useState } from "react"
 import Modal from "./Modal";
 
 export default function NewTask({ onAdd }) {
-    const modal = useRef();
+   const modal = useRef();
    const [enteredTask, setEnteredTask] =  useState('');
 
     function handleChange(event) {
@@ -14,6 +14,7 @@ export default function NewTask({ onAdd }) {
             modal.current.open();
             return;
         }
+        
         onAdd(enteredTask);
         setEnteredTask('');
     }
